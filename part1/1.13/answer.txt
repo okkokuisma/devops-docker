@@ -1,0 +1,4 @@
+CHOCO-OCCO:1.13 okkokuisma$ docker build . -t backend
+[+] Building 86.5s (9/9) FINISHED                                                                                                                                                               
+	…
+CHOCO-OCCO:1.13 okkokuisma$ docker run -p 8080:8080 backend
