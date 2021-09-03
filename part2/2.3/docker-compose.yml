@@ -1,0 +1,16 @@
+version: '3.5'
+
+services: 
+
+  backend:
+    image: modified_back
+    build: .
+    ports: 
+      - 8080:8080
+  
+  frontend:
+    image: modified_front
+    build: .
+    ports: 
+      - 5000:5000
+    
