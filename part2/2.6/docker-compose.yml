@@ -1,0 +1,39 @@
+version: '3.5'
+
+services:
+
+  backend:
+    image: modified_back
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=secret
+    depends_on:
+      - db
+
+  frontend:
+    image: modified_front
+    build: .
+    ports:
+      - 5000:5000
+
+  redis:
+    image: redis
+    build: .
+    expose:
+      - 6379
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: secret
+    container_name: db_example
+    volumes:
+      - database:/var/lib/postgresql/data
+
+volumes:
+  database:
