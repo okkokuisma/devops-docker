@@ -1,17 +1,17 @@
-Script started on Tue May 17 16:16:13 2022
+Script started on Tue May 17 16:22:32 2022
 
 The default interactive shell is now zsh.
 To update your account to use zsh, please run `chsh -s /bin/zsh`.
 For more details, please visit https://support.apple.com/kb/HT208050.
-[?1034hbash-3.2$ exitdocker-compose downup -d --scale compute=4
+[?1034hbash-3.2$ docker-compose up -d --scale compute=4
 Creating network "scaling-exercise_default" with the default driver
+Creating load-balancer ... 
 Creating scaling-exercise_compute_1 ... 
 Creating scaling-exercise_compute_2 ... 
 Creating scaling-exercise_compute_3 ... 
 Creating scaling-exercise_compute_4 ... 
-Creating load-balancer              ... 
 Creating calculator                 ... 
-[4A[2KCreating scaling-exercise_compute_3 ... [32mdone[0m[4B[1A[2KCreating calculator                 ... [32mdone[0m[1B[3A[2KCreating scaling-exercise_compute_4 ... [32mdone[0m[3B[6A[2KCreating scaling-exercise_compute_1 ... [32mdone[0m[6B[5A[2KCreating scaling-exercise_compute_2 ... [32mdone[0m[5B[2A[2KCreating load-balancer              ... [32mdone[0m[2Bbash-3.2$ exit
+[4A[2KCreating scaling-exercise_compute_2 ... [32mdone[0m[4B[1A[2KCreating calculator                 ... [32mdone[0m[1B[3A[2KCreating scaling-exercise_compute_3 ... [32mdone[0m[3B[6A[2KCreating load-balancer              ... [32mdone[0m[6B[5A[2KCreating scaling-exercise_compute_1 ... [32mdone[0m[5B[2A[2KCreating scaling-exercise_compute_4 ... [32mdone[0m[2Bbash-3.2$ exit
 exit
 
-Script done on Tue May 17 16:16:32 2022
+Script done on Tue May 17 16:22:49 2022
