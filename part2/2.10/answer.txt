@@ -1,0 +1,1 @@
+I changed the REACT_APP_BACKEND_URL env variable in the Dockerfile for frontend image.
