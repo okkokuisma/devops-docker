@@ -1,0 +1,1 @@
+I have containerized my app including a node backend, a React frontend and a postgres backend. There are Dockerfiles for both front and backend and a docker-compose file to start things up. Seems to work fine: nodemon restarts after making changes to code and data is persisted to the db.

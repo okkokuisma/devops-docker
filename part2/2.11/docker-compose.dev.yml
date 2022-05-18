@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: my-app-frontend-dev
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./frontend/:/usr/src/app
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:3003/api
+    container_name: my-app-frontend-dev
+  backend:
+    image: my-app-backend-dev
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USERNAME=postgres
+      - PORT=3003
+      - DB_NAME=my-app-db
+      - DB_HOST=my-app-db-dev
+      - DB_PORT=5432
+    ports:
+      - 3003:3003
+    volumes:
+      - ./backend/:/usr/src/app
+    depends_on:
+      - db
+    container_name: my-app-backend-dev
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=my-app-db
+    volumes:
+      - ./backend/db/data/postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    container_name: my-app-db-dev
