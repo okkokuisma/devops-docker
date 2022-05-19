@@ -1,0 +1,23 @@
+Script started on Thu May 19 14:22:59 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED              STATUS              PORTS                                   NAMES
+ca662ef5b939   nginx:1.21.6-alpine    "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:8080->80/tcp, :::8080->80/tcp   33_nginx_1
+81192b5e0999   back-user              "/bin/sh -c ./server"    About a minute ago   Up About a minute   8080/tcp                                33_backend_1
+68d20496cd52   redis                  "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp                                33_redis_1
+91276b386958   postgres:13.2-alpine   "docker-entrypoint.s…"   About a minute ago   Up About a minute   5432/tcp                                db_example
+e3f065178879   front-user             "serve -s -l 5000 bu…"   About a minute ago   Up About a minute   5000/tcp                                33_frontend_1
+bash-3.2$ docker inspect $(docker ps -q) --format '{{.Config.User}} {{.Name}}'
+ /33_nginx_1
+appuser /33_backend_1
+ /33_redis_1
+ /db_example
+appuser /33_frontend_1
+bash-3.2$ exit
+exit
+
+Script done on Thu May 19 14:23:49 2022
+
