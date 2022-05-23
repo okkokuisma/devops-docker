@@ -1,0 +1,7 @@
+Frontend:
+Size before: 592MB
+Size after: 545MB
+
+Backend:
+Size before: 839MB
+Size after: 656MB

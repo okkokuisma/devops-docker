@@ -1,0 +1,7 @@
+Frontend:
+Size after 3.4: 545MB
+Size after 3.5: 432MB
+
+Backend:
+Size after 3.4: 656MB
+Size after 3.5: 466MB 
